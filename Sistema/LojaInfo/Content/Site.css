@@ -1,0 +1,659 @@
+﻿:root {
+    --laranja: rgba(255, 121, 63, 0.95);
+    --azul: rgb(52,172,224);
+}
+
+`{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+
+body {
+    background-color: var(--azul);
+    width: 110%;
+    overflow-x: hidden;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body::before {
+    content: "";
+    height: 0;
+    float: left;
+    padding-bottom: 50%;
+}
+
+.body::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.navbar {
+    background-color: var(--laranja);
+    position: absolute;
+    width: 110%;
+    display: flex;
+    top: -0.5%;
+    height: 10vw;
+}
+@media (max-width:2400px) {
+
+    #nome {
+        position: relative;
+        left: 10%;
+        font-size: 2.5vw;
+        top: 2.5vw;
+        max-inline-size: 1vw;
+        color: aliceblue;
+    }
+
+    .pesquisa {
+        position: relative;
+        left: 20vw;
+        top: 25%;
+        width: 600px;
+    }
+
+    .links {
+        display: flex;
+        color: aliceblue;
+        font-weight: bold;
+        position: relative;
+        left: 15vw;
+        top: 4.5vw;
+    }
+
+        .links span {
+            position: relative;
+            margin-left: 2vw;
+        }
+
+    #txt_consulta {
+        width: 25vw;
+        left: 5vw;
+        top: 1.3vw;
+    }
+
+    .form-group input-group {
+        display: flex;
+    }
+
+    .button-search {
+        background-color: var(--azul);
+        width: 3vw;
+        height: 61%;
+        position: absolute;
+        z-index: 0;
+        left: 30vw;
+        bottom: 0.1vw;
+        text-align: center;
+        border-radius: 0.5px;
+        border: 0.5px solid #34ACE0;
+        outline: none;
+        top: 1.3vw;
+    }
+
+    #icon {
+        position: relative;
+        z-index: 1;
+        left: 31vw;
+        top: -0.5vw;
+        color: aliceblue;
+    }
+
+    #icon-carrinho, #icon-login {
+        position: relative;
+        left: 1vw;
+    }
+
+    .links-setores {
+        display: flex;
+        color: aliceblue;
+        font-weight: bold;
+        position: relative;
+        right: 50vw;
+        top: 3.5vw;
+    }
+
+    .link-setor {
+        padding-left: 1vw;
+    }
+}
+
+@media (max-width:1500px) {
+
+    #nome {
+        position: relative;
+        left: 10%;
+        font-size: 2.5vw;
+        top: 2.5vw;
+        max-inline-size: 1vw;
+        color: aliceblue;
+    }
+
+    .pesquisa {
+        position: relative;
+        left: 20vw;
+        top: 25%;
+        width: 600px;
+    }
+
+    .links {
+        display: flex;
+        color: aliceblue;
+        font-weight: bold;
+        position: relative;
+        left: 15vw;
+        top: 4.5vw;
+    }
+
+        .links span {
+            position: relative;
+            margin-left: 2vw;
+        }
+
+    #txt_consulta {
+        width: 25vw;
+        left: 5vw;
+        top: 1.3vw;
+    }
+
+    .form-group input-group {
+        display: flex;
+    }
+
+    .button-search {
+        background-color: var(--azul);
+        width: 3vw;
+        height: 61%;
+        position: absolute;
+        z-index: 0;
+        left: 30vw;
+        bottom: 0.1vw;
+        text-align: center;
+        border-radius: 0.5px;
+        border: 0.5px solid #34ACE0;
+        outline: none;
+        top:1.3vw;
+    }
+
+    #icon {
+        position: relative;
+        z-index: 1;
+        left: 31vw;
+        top: -0.5vw;
+        color: aliceblue;
+    }
+
+    #icon-carrinho, #icon-login {
+        position: relative;
+        left: 1vw;
+    }
+
+    .links-setores {
+        display: flex;
+        color: aliceblue;
+        font-weight: bold;
+        position: relative;
+        cursor:pointer;
+        left:5vw;
+        top: 2.5vw;
+    }
+    .links-setores th:hover{
+        text-decoration:underline;
+    }
+
+    .link-setor {
+        padding-left: 1vw;
+    }
+}
+@media only screen and (max-width:1281px) {
+
+        #nome {
+            position: relative;
+            left: 10%;
+            font-size: 2.5vw;
+            top: 2.5vw;
+            max-inline-size: 1vw;
+            color: aliceblue;
+        }
+
+        .pesquisa {
+            position: relative;
+            left: 20vw;
+            top: 25%;
+            width: 600px;
+        }
+
+        .links {
+            display: flex;
+            color: aliceblue;
+            font-weight: bold;
+            position: relative;
+            left: 10vw;
+            top: 4.5vw;
+        }
+
+            .links span {
+                position: relative;
+                margin-left: 2vw;
+            }
+
+        #txt_consulta {
+            width: 25vw;
+            left: 5vw;
+            top: 1.3vw;
+        }
+
+        .form-group input-group {
+            display: flex;
+        }
+
+        .button-search {
+            background-color: var(--azul);
+            width: 3vw;
+            height: 61%;
+            position: absolute;
+            z-index: 0;
+            left: 30vw;
+            bottom: 0.2vw;
+            text-align: center;
+            border-radius: 0.5px;
+            border: 0.5px solid #34ACE0;
+            outline: none;
+        }
+
+        #icon {
+            position: relative;
+            z-index: 1;
+            left: 31vw;
+            top: -0.5vw;
+            color: aliceblue;
+        }
+
+        #icon-carrinho, #icon-login {
+            position: relative;
+            left: 1vw;
+        }
+
+        .links-setores {
+            display: flex;
+            color: aliceblue;
+            font-weight: bold;
+            position: relative;
+            right: 31vw;
+            top: 6.5vw;
+        }
+
+        .link-setor {
+            padding-left: 1vw;
+        }
+    }
+
+@media only screen and (max-width:1024px) {
+    .navbar {
+        background-color: var(--laranja);
+        position: absolute;
+        width: 110%;
+        display: flex;
+        top: -0.5%;
+        height: 15vw;
+    }
+    
+    #nome {
+        position: relative;
+        left: 10%;
+        font-size: 2.5vw;
+        top: 2.5vw;
+        max-inline-size: 1vw;
+        color: aliceblue;
+    }
+
+    .pesquisa {
+        position: relative;
+        left: 20vw;
+        top: 25%;
+        width: 600px;
+    }
+
+    .links {
+        display: flex;
+        color: aliceblue;
+        font-weight: bold;
+        position: relative;
+        left: 10vw;
+        top: 4.9vw;
+    }
+
+        .links span {
+            position: relative;
+            margin-left: 2vw;
+        }
+
+    #txt_consulta {
+        width: 25vw;
+        left: 5vw;
+        top: 1.3vw;
+    }
+
+    .form-group input-group {
+        display: flex;
+    }
+
+    .button-search {
+        background-color: var(--azul);
+        width: 3.5vw;
+        height: 61%;
+        position: absolute;
+        z-index: 0;
+        left: 30vw;
+        bottom: 0.1vw;
+        text-align: center;
+        border-radius: 0.5px;
+        border: 0.5px solid #34ACE0;
+        outline: none;
+    }
+
+    #icon {
+        position: relative;
+        z-index: 1;
+        left: 31vw;
+        top: -1vw;
+        color: aliceblue;
+    }
+
+    #icon-carrinho, #icon-login {
+        position: relative;
+        left: 1vw;
+    }
+
+    .links-setores {
+        display: flex;
+        color: aliceblue;
+        font-weight: bold;
+        position: relative;
+        right: 50vw;
+        top: 9vw;
+    }
+
+    .link-setor {
+        padding-left: 1vw;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .navbar {
+        background-color: var(--laranja);
+        position: absolute;
+        width: 110%;
+        display: flex;
+        top: -0.5%;
+        height: 13vw;
+    }
+
+    #nome {
+        position: relative;
+        left: 10%;
+        font-size: 2.5vw;
+        top: 2.5vw;
+        max-inline-size: 1vw;
+        color: aliceblue;
+    }
+
+    .pesquisa {
+        position: relative;
+        left: 20vw;
+        top: 25%;
+        width: 600px;
+    }
+
+    .links {
+        display: flex;
+        color: aliceblue;
+        font-weight: bold;
+        position: relative;
+        left: 10vw;
+        top: 4.5vw;
+    }
+
+        .links span {
+            position: relative;
+            margin-left: 2vw;
+        }
+
+    #txt_consulta {
+        width: 33vw;
+        left: 5vw;
+        top: 1.3vw;
+    }
+
+    .form-group input-group {
+        display: flex;
+    }
+
+    .button-search {
+        background-color: var(--azul);
+        width: 5vw;
+        height: 61%;
+        position: absolute;
+        z-index: 0;
+        left: 38vw;
+        bottom: 0.2vw;
+        text-align: center;
+        border-radius: 0.5px;
+        border: 0.5px solid #34ACE0;
+        outline: none;
+    }
+
+    #icon {
+        position: relative;
+        z-index: 1;
+        left: 39.5vw;
+        top: -2vw;
+        color: aliceblue;
+    }
+
+    #icon-carrinho, #icon-login {
+        position: relative;
+        left: 1vw;
+    }
+
+    .links-setores {
+        display: flex;
+        color: aliceblue;
+        font-weight: bold;
+        position: relative;
+        right: 57.5vw;
+        top: 9vw;
+    }
+
+    .link-setor {
+        padding-left: 1vw;
+    }
+}
+
+
+
+@media (max-width:600px) {
+    .navbar {
+        background-color: var(--laranja);
+        position: absolute;
+        width: 110%;
+        display: flex;
+        top: -0.5%;
+        height: 25vw;
+    }
+
+    #nome {
+        position: relative;
+        left: 5%;
+        font-size: 4vw;
+        top: 2.5vw;
+        max-inline-size: 1vw;
+        color: aliceblue;
+    }
+
+    .pesquisa {
+        position: relative;
+        left: 20vw;
+        top: 25%;
+        width: 600px;
+    }
+
+    .links {
+        display: flex;
+        color: aliceblue;
+        font-weight: bold;
+        position: relative;
+        left: 20vw;
+        top: 5vw;
+    }
+
+        .links span {
+            position: relative;
+            margin-left: 2.5vw;
+        }
+
+    #txt_consulta {
+        width: 25vw;
+        left: 5vw;
+        top: 1vw;
+    }
+
+    .form-group input-group {
+        display: flex;
+    }
+
+    .button-search {
+        background-color: var(--azul);
+        width: 5.5vw;
+        height: 61%;
+        position: absolute;
+        z-index: 0;
+        left: 30vw;
+        bottom: 0.2vw;
+        text-align: center;
+        border-radius: 0.5px;
+        border: 0.5px solid #34ACE0;
+        outline: none;
+    }
+
+    #icon {
+        position: relative;
+        z-index: 1;
+        left: 31vw;
+        top: -3.5vw;
+        color: aliceblue;
+    }
+
+    #icon-carrinho, #icon-login {
+        position: relative;
+        left: 1vw;
+    }
+
+    .links-setores {
+        display: flex;
+        color: aliceblue;
+        font-weight: bold;
+        position: relative;
+        right: 40vw;
+        top: 15vw;
+    }
+
+    .link-setor {
+        padding-left: 1vw;
+    }
+
+}
+
+@media (max-width:320px) {
+    .navbar {
+        background-color: var(--laranja);
+        position: absolute;
+        width: 110%;
+        display: flex;
+        top: -0.5%;
+        height: 20vw;
+    }
+
+    #nome {
+        position: relative;
+        left: 10%;
+        font-size: 2.5vw;
+        top: 2.5vw;
+        max-inline-size: 1vw;
+        color: aliceblue;
+    }
+
+    .pesquisa {
+        position: relative;
+        left: 20vw;
+        top: 25%;
+        width: 600px;
+    }
+
+    .links {
+        display: BLOCK;
+        color: aliceblue;
+        font-weight: bold;
+        position: relative;
+        left: 10vw;
+        top: 4.5vw;
+    }
+
+        .links span {
+            position: relative;
+            margin-left: 2vw;
+        }
+
+    #txt_consulta {
+        width: 25vw;
+        left: 5vw;
+        top: 1.3vw;
+    }
+
+    .form-group input-group {
+        display: flex;
+    }
+
+    .button-search {
+        background-color: var(--azul);
+        width: 3vw;
+        height: 61%;
+        position: absolute;
+        z-index: 0;
+        left: 30vw;
+        bottom: 0.2vw;
+        text-align: center;
+        border-radius: 0.5px;
+        border: 0.5px solid #34ACE0;
+        outline: none;
+    }
+
+    #icon {
+        position: relative;
+        z-index: 1;
+        left: 31vw;
+        top: -0.5vw;
+        color: aliceblue;
+    }
+
+    #icon-carrinho, #icon-login {
+        position: relative;
+        left: 1vw;
+    }
+
+    .links-setores {
+        display: flex;
+        color: aliceblue;
+        font-weight: bold;
+        position: relative;
+        right: 33vw;
+        top: 7vw;
+    }
+
+    .link-setor {
+        padding-left: 1vw;
+    }
+}

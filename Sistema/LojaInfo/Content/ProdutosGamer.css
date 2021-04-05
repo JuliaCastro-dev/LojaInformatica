@@ -1,0 +1,107 @@
+﻿* {
+    font-family: 'Poppins', sans-serif serif;
+}
+
+:root {
+    --laranja: rgba(255, 121, 63, 0.95);
+    --azul: rgb(52,172,224);
+    --azul-Escuro: #2C5D92;
+}
+
+body {
+    background-color: var(--azul);
+    overflow: hidden;
+    width: 110%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.navbar {
+    background-color: var(--laranja);
+    position: absolute;
+    width: 115%;
+    display: flex;
+    top: -0.5%;
+    height: 15vw;
+    font-family: 'Poppins', sans-serif serif;
+}
+
+#nome {
+    position: relative;
+    left: 10%;
+    font-size: 2vw;
+    top: 1vw;
+    max-inline-size: 1vw;
+    color: aliceblue;
+}
+
+footer {
+    position: relative;
+    top: 35vw;
+}
+
+.center {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 75vw;
+    max-width:80vw;
+    height: 38vw;
+    background: white;
+    border-radius: 10px;
+}
+
+h2 {
+    font-family: 'Poppins';
+    color: var(--azul-Escuro);
+    position: relative;
+    font-size:95%;
+    font-weight:bolder:
+}
+h3 {
+    font-family: 'Poppins';
+    color: var(--azul-Escuro);
+    font-weight:700;
+    font-size: 70%;
+    position: relative;
+    top: -2vw;
+
+}
+img{
+   width:10vw;
+   height:10vw;
+}
+.Imagem{
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    position:relative;
+    top:0.5vw;
+}
+.Descricao {
+    display: block;
+    justify-content: center;
+    align-content: center;
+    position:relative;
+    left:1vw;
+    
+}
+.produto {
+    font-family: 'Poppins', sans-serif serif;
+    max-width: 17vw;
+    display: block;
+    border: 1px solid rgb(52,172,224);
+    border-radius: 10px;
+    margin: 5vw;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transform: translateZ(20px);
+}
+#setor {
+    font-family: 'Poppins';
+    color:aliceblue;
+    position:relative;
+    font-weight:500;
+    left:33%;
+    top:3vw;
+}

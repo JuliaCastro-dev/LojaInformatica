@@ -1,0 +1,136 @@
+﻿:root {
+    --laranja: rgba(255, 121, 63, 0.95);
+    --azul: rgb(52,172,224);
+}
+body{
+    background-color:#06013C;
+}
+.banner-index {
+    width: 120%;
+    height: 15vw;
+    background-color: #06013C;
+    justify-content: center;
+    display: flex;
+    box-sizing: content-box;
+    position: relative;
+    right: 13vw;
+    top: -1vw;
+    border-bottom: 4px solid #fff;
+}
+
+    .banner-index img {
+        height: 100%;
+        position: relative;
+        right: 1vw;
+        width: 100%;
+        
+    }
+
+footer {
+    position: relative;
+    top: 30vw;
+}
+hr{
+    color:aliceblue;
+    background-color:aliceblue;
+}
+
+.produto{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.3fr 1.7fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "IMAGEM . . ."
+        "desc . . ."
+        ". . . .";
+
+    z-index:10;
+}
+/*#banner2 {
+    width: 110%;
+    position: absolute;
+    filter: blur(2px);
+    height: 25vw;
+    right:3vw;
+    z-index:1;
+}*/
+
+.IMAGEM {
+    grid-area: IMAGEM;
+    max-width:18vw;
+}
+.IMAGEM img{
+    width:20VW;
+    height:17vw;
+    border-radius:10px;
+}
+h1 {
+    color: #fff;
+    font-family: 'Poppins', sans-serif serif;
+    position:relative;
+    left:25%;
+    font-weight:400;
+}
+
+.desc {
+    grid-area: desc;
+    justify-content:center;
+    align-content:center;
+    display:flex;
+    height:2.5vw;
+}
+.Adicionar {
+    top:1vw;
+    position:relative;
+    outline: none;
+    background-color:transparent;
+    color: aliceblue;
+    font-family: 'Poppins', sans-serif serif;
+    border: 2px solid rgb(52,172,224);
+    border-radius:5px;
+}
+@media only screen and (max-width:1024px) {
+}
+
+.banner-index {
+    width: 120%;
+    height: 15vw;
+    background-color: #06013C;
+    justify-content: center;
+    display: flex;
+    box-sizing: content-box;
+    position: relative;
+    right: 13vw;
+    top: -1.9vw;
+}
+
+    .banner-index img {
+        height: 100%;
+        position: relative;
+        right: 1vw;
+        width: 100%;
+    }
+}
+
+@media (max-width:800px) {
+    banner-index {
+        width: 100%;
+        height: 15.5vw;
+        background-color: #06013C;
+        justify-content: center;
+        display: flex;
+        box-sizing: content-box;
+        position: relative;
+        right: 13vw;
+        top: -4vw;
+    }
+
+    .banner-index img {
+        height: 100%;
+        position: relative;
+        right: 1vw;
+        width: 100%;
+        top: -4vw;
+    }
+}

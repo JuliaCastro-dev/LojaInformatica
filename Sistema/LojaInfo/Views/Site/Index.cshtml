@@ -1,0 +1,26 @@
+﻿@model IEnumerable<LojaInfo.Models.Produto>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/Index.css" rel="stylesheet" />
+
+<div class="banner-index">
+    <img src="~/Imagens/banner.png" />
+    <hr/>
+</div>
+<div class="container">
+    <div class="produtos">
+        @*<img id="banner2" src="~/Imagens/Banner2.jpg" />*@
+        <h1>Veja nossos produtos</h1>
+            <div class="produto">
+                <div class="IMAGEM">
+                    <img src="~/Imagens/GAMER.png" />
+                </div>
+                <div class="desc">
+                    <input class="Adicionar" type="button" value="Ver Todos" onclick="location.href='@Url.Action("ProdutosGamer", "Sistema")'" />
+                </div>
+            </div>
+        
+    </div>
+</div>

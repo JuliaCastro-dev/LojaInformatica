@@ -1,0 +1,76 @@
+﻿@model IEnumerable<LojaInfo.Models.Cliente>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Clientes</title>
+    <link href="~/Content/Clientes.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <h1 id="nome">SoftTech</h1>
+    </div>
+    <h2>Clientes</h2>
+    <div class="center">
+
+        @Html.ActionLink("<-", "DashboardGerente", new { htmlAttributes = new { @class = "link" } })
+        <input class="Adicionar" type="button" value="Adicionar Novo" onclick="location.href='@Url.Action("CadastroCliente", "Cliente")'" />
+        <table class="table">
+            <tr>
+                <th class="codigo">
+                    @Html.DisplayNameFor(model => model.cd_cliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nm_cliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tel_cliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CPF_cliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.end_cliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.email_cliente)
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="codigo">
+                        @Html.DisplayFor(modelItem => item.cd_cliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nm_cliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tel_cliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CPF_cliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.end_cliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email_cliente)
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>

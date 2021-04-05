@@ -1,0 +1,86 @@
+﻿@model LojaInfo.Models.Funcionario
+
+@{
+    Layout = null;
+    ViewBag.Title = "CadastrarFuncionario";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastro de Funcionario</title>
+    <link href="~/Content/CadFuncionario.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/Imagens/Logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="navbar">
+        <h1 id="nome">SoftTech</h1>
+    </div>
+    <span>@ViewBag.confCadastro</span>
+    <div class="center">
+        @using (Html.BeginForm("CadastrarFuncionario", "Sistema", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true, "Campos Obrigatórios", new { @class = "text-danger" })
+
+            <div class="form-horizontal">
+                <h4>Funcionario</h4>
+
+
+                <div>
+                    @Html.ActionLink("<-", "Funcionarios", new { htmlAttributes = new { @class = "link" } })
+                </div>
+                <div class="form-group">
+
+                    <div class="txt_field ">
+                        @Html.EditorFor(model => model.nm_func, new { htmlAttributes = new { @type = "text", @class = "input text-box single-line", @placeholder = "Nome Completo" } })
+                        @Html.ValidationMessageFor(model => model.nm_func, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="txt_field ">
+                        @Html.EditorFor(model => model.end_func, new { htmlAttributes = new { @type = "text", @class = "input text-box single-line", @placeholder = "Endereço" } })
+                        @Html.ValidationMessageFor(model => model.end_func, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="txt_field ">
+                        @Html.EditorFor(model => model.cargo_func, new { htmlAttributes = new { @type = "text", @class = "input text-box single-line", @placeholder = "Cargo" } })
+                        @Html.ValidationMessageFor(model => model.cargo_func, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="txt_field ">
+                        @Html.EditorFor(model => model.tel_func, new { htmlAttributes = new { @type = "text", @class = "input text-box single-line", @placeholder = "Telefone" } })
+                        @Html.ValidationMessageFor(model => model.tel_func, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+
+                        <input type="submit" value="Cadastrar" class="cadastrar" /><br />
+                        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  @Html.ActionLink("Cadastrar Login", "cadastroLoginFunc", new { htmlAttributes = new { @class = "link" } })
+
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    </div>
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

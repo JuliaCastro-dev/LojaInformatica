@@ -1,0 +1,71 @@
+﻿@model IEnumerable<LojaInfo.Models.Funcionario>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Funcionarios</title>
+    <link href="~/Content/Funcionarios.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <h1 id="nome">SoftTech</h1>
+    </div>
+    <h1 id="funcionarios">Funcionários</h1>
+    <div class="center">
+        <div class="links">
+            @Html.ActionLink("<-", "DashboardGerente", new { htmlAttributes = new { @class = "link" } })
+            <input class="Adicionar" type="button" value="Adicionar Novo" onclick="location.href='@Url.Action("CadastrarFuncionario", "Sistema")'" />
+        </div> 
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.cd_func)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nm_func)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.end_func)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.cargo_func)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tel_func)
+                </th>    
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cd_func)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nm_func)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.end_func)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cargo_func)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tel_func)
+                    </td>
+                    
+                </tr>
+            }
+
+
+        </table>
+    </div>
+</body>
+</html>

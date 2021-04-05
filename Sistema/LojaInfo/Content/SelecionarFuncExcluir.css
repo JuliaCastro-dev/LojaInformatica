@@ -1,0 +1,52 @@
+﻿* {
+    font-family: 'Poppins', sans-serif serif;
+}
+
+:root {
+    --laranja: rgba(255, 121, 63, 0.95);
+    --azul: rgb(52,172,224);
+    --azul-Escuro: #2C5D92;
+}
+
+body {
+    background-color: var(--azul);
+    overflow: hidden;
+    width: 110%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.navbar {
+    background-color: var(--laranja);
+    position: absolute;
+    width: 115%;
+    display: flex;
+    top: -0.5%;
+    height: 15vw;
+    font-family: 'Poppins', sans-serif serif;
+}
+
+#nome {
+    position: relative;
+    left: 10%;
+    font-size: 2vw;
+    top: 1vw;
+    max-inline-size: 1vw;
+    color: aliceblue;
+}
+
+footer {
+    position: relative;
+    top: 35vw;
+}
+
+
+.center {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 50vw;
+    height: 39vw;
+    background: white;
+    border-radius: 10px;
+}

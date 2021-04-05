@@ -1,0 +1,44 @@
+﻿@model LojaInfo.Login.login
+@{
+    ViewBag.Title = "Login";
+}
+
+<!Doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+
+    <link href="~/Content/login.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="center">
+            <h1>É Necessário colocar o Usuário e a Senha!!!</h1>
+            @using (Html.BeginForm())
+            {
+                <div class="txt_field">
+
+
+                    @Html.EditorFor(m => m.usuario, new { htmlAttributes = new { @type = "text", @class = "input", @placeholder = "Usuário" } })
+                </div>
+
+                <div class="txt_field">
+
+                    <span></span>
+                    @Html.EditorFor(m => m.senha, new { htmlAttributes = new { @type = "text", @class = "input", @placeholder = "Senha" } })
+                    <span></span>
+
+                </div>
+               
+                <input type="submit" value="Login" class="botao">
+                
+
+            }
+        </div>
+    </div>
+</body>
+</html>
+

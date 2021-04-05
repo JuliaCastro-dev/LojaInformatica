@@ -1,0 +1,128 @@
+﻿* {
+    font-family: 'Poppins', sans-serif serif;
+}
+
+:root {
+    --laranja: rgba(255, 121, 63, 0.95);
+    --azul: rgb(52,172,224);
+    --azul-Escuro: #2C5D92;
+}
+
+body {
+    background-color: var(--azul);
+    overflow: hidden;
+    width: 110%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.navbar {
+    background-color: var(--laranja);
+    position: absolute;
+    width: 115%;
+    display: flex;
+    top: -0.5%;
+    height: 15vw;
+    font-family: 'Poppins', sans-serif serif;
+}
+
+#nome {
+    position: relative;
+    left: 10%;
+    font-size: 2vw;
+    top: 1vw;
+    max-inline-size: 1vw;
+    color: aliceblue;
+}
+
+footer {
+    position: relative;
+    top: 35vw;
+}
+
+
+.center {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 50vw;
+    height: 39vw;
+    background: white;
+    border-radius: 10px;
+}
+
+form .txt_field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 1vw 7vw;
+    top: -3.5vw;
+}
+
+.txt_field input {
+    width: 80vw;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    max-width: 33vw;
+}
+
+.input:focus,
+.input:valid {
+    top: -5px;
+    color: #2691d9;
+}
+h4 {
+    color: var(--azul-Escuro);
+    font-weight: 600;
+    position: relative;
+   
+    font-size: 2vw;
+    font-family: 'Poppins', sans-serif;
+    left: 36%;
+}
+select{
+    font-family: 'Poppins', sans-serif serif;
+    background-color:white;
+    width:12vw;
+    height:2vw;
+    color:crimson;
+    border:1px solid crimson;
+    border-radius:5px;
+    margin-left:1vw;
+   
+}
+.selects{
+    position:relative;
+    display:flex;
+    left:7vw;
+    margin-bottom:4vw;
+
+}
+
+.cadastrar {
+    background: linear-gradient(180deg, #0089EC 0%, rgba(255, 255, 255, 0) 100%), #34ACE0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    position: relative;
+    top: -3vw;
+    color: aliceblue;
+    width: 8vw;
+    left: 40%;
+    height: 2vw;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+body > div.center > form > div > a {
+    position:relative;
+    cursor: pointer;
+    color: var(--azul-Escuro);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    left: 5%;
+    top:1vw;
+}

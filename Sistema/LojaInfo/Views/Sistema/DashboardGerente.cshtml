@@ -1,0 +1,56 @@
+﻿
+@model IEnumerable<LojaInfo.Models.Vendas>
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title SoftTech</title>
+
+    <link href="~/Content/DashboardGerente.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <div class="navbar">
+        <h1 id="nome">SoftTech</h1>
+    </div>
+    <h1 id="bemvindo">Bem-Vindo</h1>
+    <div class="center">
+
+        <div class="vendas">
+            <span>Vendas</span> <br />
+            <img class="img-money" src="~/Imagens/money.png" />
+            @foreach (var item in Model)
+            {
+
+                @Html.DisplayFor(modelItem => item.qtVendas)
+            }
+            <input class="button-saiba" type="button" value="Saiba Mais" onclick="location.href='@Url.Action("Vendas", "Sistema")'" />
+        </div>
+        <div class="funcionarios">
+
+            @Html.ActionLink("Funcionários", "Funcionarios", "Sistema", new { area = "" }, new { @class = "link" })
+        </div>
+        <div class="produtos">
+
+            @Html.ActionLink("Produtos", "Produtos", "Sistema", new { area = "" }, new { @class = "link" })
+
+        </div>
+        <div class="clientes">
+
+            @Html.ActionLink("Clientes", "Clientes", "Sistema", new { area = "" }, new { @class = "link" })
+
+        </div>
+    </div>
+</body>
+</html>
