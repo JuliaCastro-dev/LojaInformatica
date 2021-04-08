@@ -1,0 +1,84 @@
+﻿@model IEnumerable<LojaInfo.Models.Vendas>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Vendas</title>
+    <link href="~/Content/Vendas.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <h1 id="nome">SoftTech</h1>
+    </div>
+   
+    <h2>Vendas</h2>
+    <div class="center">
+        @Html.ActionLink("<-", "DashboardGerente", new { htmlAttributes = new { @class = "link" } })
+        <input class="Adicionar" type="button" value="Adicionar Nova Venda" onclick="location.href='@Url.Action("CadastrarVenda", "Sistema")'" />
+        <table class="table">
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.cd_venda)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.cd_cliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dt_venda)
+                </th>
+
+                <th class="end">
+                    @Html.DisplayNameFor(model => model.end_cliente)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.vl_total)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tp_pagamento)
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cd_venda)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cd_cliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dt_venda)
+                    </td>
+
+                    <td class="end">
+                        @Html.DisplayFor(modelItem => item.end_cliente)
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.vl_total)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tp_pagamento)
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>

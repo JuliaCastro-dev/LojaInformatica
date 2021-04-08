@@ -1,0 +1,51 @@
+﻿@model LojaInfo.Models.Cliente
+@{
+    ViewBag.Title = "cadastroCliente";
+    Layout = null;
+}
+
+<!Doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Cadastro de Cliente</title>
+    <link href="~/Content/CadastroCliente.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar">
+        <h1 id="nome">SoftTech</h1>
+    </div>
+    @Html.ActionLink("<-", "Clientes","Sistema")
+    <h2>Clientes</h2>
+    <div class="center">
+        <h1>Preencha todos os dados</h1>
+        @using (Html.BeginForm("cadastroCliente", "Cliente", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true, "Obrigatório Todos os dados", new { @class = "text-danger" })
+            <div class="txt_field">
+                @Html.EditorFor(m => m.nm_cliente, new { htmlAttributes = new { @type = "text", @class = "input", @placeholder = "Nome completo" } })
+            </div>
+            <div class="txt_field">
+                @Html.EditorFor(m => m.CPF_cliente, new { htmlAttributes = new { @type = "text", @class = "input", @placeholder = "CPF" } })
+
+            </div>
+            <div class="txt_field">
+                @Html.EditorFor(m => m.tel_cliente, new { htmlAttributes = new { @type = "text", @class = "input", @placeholder = "Telefone" } })
+            </div>
+            <div class="txt_field">
+                @Html.EditorFor(m => m.end_cliente, new { htmlAttributes = new { @type = "text", @class = "input", @placeholder = "Endereço" } })
+            </div>
+
+            <div class="txt_field">
+                @Html.EditorFor(m => m.email_cliente, new { htmlAttributes = new { @type = "text", @class = "input", @placeholder = "E-mail" } })
+            </div>
+
+            @ViewBag.confCadastro<br />
+            <input type="submit" value="Continuar" class="botao"><br />
+        }
+
+    </div>
+</body>
+</html>

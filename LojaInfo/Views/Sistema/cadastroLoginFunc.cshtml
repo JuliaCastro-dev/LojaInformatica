@@ -1,0 +1,54 @@
+﻿@model LojaInfo.Login.login
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>cadastroLoginFunc</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+    <link href="~/Content/CadastrarLoginFunc.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="navbar">
+        <h1 id="nome">SoftTech</h1>
+    </div>
+    <span> @ViewBag.confCadastro</span>
+    <div class="center">
+        @Html.ActionLink("<-", "Funcionarios", new { htmlAttributes = new { @class = "link" } }) <h1>Cadastre o Login!</h1>
+
+        @using (Html.BeginForm("cadastroLoginFunc", "Sistema", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "Campos Obrigatórios", new { @class = "text-danger" })
+            <div>
+                <div class="txt_field">
+
+                    @Html.EditorFor(m => m.usuario, new { htmlAttributes = new { @type = "text", @class = "input", @placeholder = "Usuário" } })
+
+                </div>
+
+            </div>
+            <div class="txt_field">
+                @Html.EditorFor(m => m.senha, new { htmlAttributes = new { @type = "text", @class = "input", @placeholder = "Senha" } })
+
+            </div>
+
+            <div class="txt_field">
+                @Html.EditorFor(m => m.confSenha, new { htmlAttributes = new { @type = "text", @class = "input", @placeholder = "Comfirma Senha" } })
+
+            </div>
+
+            <input type="submit" value="Cadastrar" class="botao">
+
+        }
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,232 @@
+﻿
+:root {
+    --laranja: rgba(255, 121, 63, 0.95);
+    --azul: rgb(52,172,224);
+}
+
+body {
+    overflow:hidden;
+    background-color: var(--azul);
+
+}
+footer {
+    position: relative;
+    top: 35vw;
+}
+
+.center {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35vw;
+    height: 30vw;
+    background: white;
+    border-radius: 10px;
+}
+.logo{
+    max-width:25vw;
+    position:relative;
+    left:10vw;
+    width:10vw;
+    z-index:1;
+}
+
+.center h1 {
+    font-size: 1vw;
+    font-family: poppins;
+    text-align: center;
+    color: var(--laranja);
+    z-index: 2;
+    position: relative;
+    bottom: 3vw;
+    font-weight:bold;
+}
+
+    .center form {
+        padding: 0 120px;
+        box-sizing: border-box;
+    }
+
+form .txt_field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt_field input {
+    width: 100vw;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.txt_field span::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: .5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    top: -5px;
+    color: #2691d9;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    width: 100;
+}
+
+.pass {
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6;
+    cursor: pointer;
+}
+
+.passhouver {
+    text-decoration: underline;
+}
+
+.botao {
+    width: 30%;
+    height: 2vw;
+    border: none;
+    background: #34ACE0;
+    outline: none;
+    color: #e9f4fb;
+    cursor: pointer;
+    border-radius:10px;
+    outline: none;
+    position: relative;
+    left: 7vw;
+}
+
+.signup_link {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+}
+
+    .signup_link a {
+        color: #2691d9;
+        text-decoration: none;
+    }
+
+        .signup_link a:hover {
+            text-decoration: underline;
+        }
+
+/*RESPONSIVO DO SOFRIMENTO  */
+@media only screen and (max-width:1440px) {
+}
+
+@media only screen and (max-width:1281px) {
+}
+
+@media only screen and (max-width:1024px) {
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 35vw;
+        height: 35vw;
+        background: white;
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (max-width:800px) {
+
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60vw;
+        height: 60vw;
+        background: white;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width:600px) {
+
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60vw;
+        height: 65vw;
+        background: white;
+        border-radius: 10px;
+    }
+    .botao {
+        width: 50%;
+        height: 4vw;
+        border: none;
+        background: #34ACE0;
+        outline: none;
+        color: #e9f4fb;
+        cursor: pointer;
+        outline: none;
+        position: relative;
+        left: 7vw;
+    }
+    .center h1 {
+        font-size: 2vw;
+        font-family: poppins;
+        text-align: center;
+        padding: 0 0 20px 0;
+        border-bottom: 1px solid silver;
+    }
+
+    .signup_link {
+        position:relative;
+        right:4vw;
+        text-align: center;
+        font-size: 2vw;
+        color: #666666;
+    }
+
+    footer {
+        position: relative;
+        top: 70vw;
+    }
+
+}
+
+@media (max-width:320px) {
+    .center {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60vw;
+        height: 65vw;
+        background: white;
+        border-radius: 10px;
+    }
+}
+

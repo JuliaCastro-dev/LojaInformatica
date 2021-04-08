@@ -1,0 +1,67 @@
+﻿@model IEnumerable<LojaInfo.Models.Produto>
+
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/Index.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+
+<body>
+    <div class="container">
+        <header>
+            <img class="logo" src="~/Imagens/Logo.png" />
+            <input class="Login" type="button" value="Login" onclick="location.href='@Url.Action("Login", "Site")'" />
+        </header>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <div class="banner">
+            <h1>Os Melhores Produtos Para o seu </h1>
+            <h2>Home Office</h2>
+
+
+            <div class="mySlides fade">
+
+                <img src="~/Imagens/bannerIndex.png" />
+            </div>
+
+            <div class="mySlides fade">
+
+                <img src="~/Imagens/headsets.png" />
+                
+            </div>
+
+
+
+
+        </div>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>

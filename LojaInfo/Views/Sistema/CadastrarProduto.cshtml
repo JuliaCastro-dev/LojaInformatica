@@ -1,0 +1,105 @@
+﻿@model LojaInfo.Models.Produto
+@{
+    Layout = null;
+    ViewBag.Title = "cadastroProduto";
+
+}
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastro de Produto</title>
+
+    <link href="~/Content/CadastrarProduto.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/Imagens/Logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="navbar">
+        <h1 id="nome">SoftTech</h1>
+        <span>@ViewBag.confCadastro</span>
+    </div>
+   
+   
+
+    <div class="center">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true, "Obrigatório Todos os dados", new { @class = "text-danger" })
+
+          
+            <div class="form-horizontal">
+                <h4>Produto</h4>
+               
+                @Html.ActionLink("<-", "Produtos", new { htmlAttributes = new { @class = "link" } })
+
+
+                <div class="txt_field ">
+                    @Html.EditorFor(model => model.img, new { htmlAttributes = new { @class = "input text-box single-line", @placeholder = "Link Imagem" } })
+                    @Html.ValidationMessageFor(model => model.img, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+
+                    <div class="txt_field ">
+                        @Html.EditorFor(model => model.produto, new { htmlAttributes = new { @class = "input text-box single-line", @placeholder = "Produto" } })
+                        @Html.ValidationMessageFor(model => model.produto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="txt_field ">
+                        @Html.EditorFor(model => model.qt_estoque, new { htmlAttributes = new { @class = "input text-box single-line", @placeholder = "Quantidade em estoque" } })
+                        @Html.ValidationMessageFor(model => model.qt_estoque, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="txt_field ">
+                        @Html.EditorFor(model => model.desc_produto, new { htmlAttributes = new { @class = "input text-box single-line", @placeholder = "Descrição" } })
+                        @Html.ValidationMessageFor(model => model.desc_produto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="txt_field ">
+                        @Html.EditorFor(model => model.valor_prod, new { htmlAttributes = new { @class = "input text-box single-line", @placeholder = "Preço" } })
+                        @Html.ValidationMessageFor(model => model.valor_prod, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="txt_field ">
+                        @Html.EditorFor(model => model.marca_produto, new { htmlAttributes = new { @class = "input text-box single-line", @placeholder = "Marca" } })
+                        @Html.ValidationMessageFor(model => model.marca_produto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="txt_field ">
+                        @Html.EditorFor(model => model.setor_produto, new { htmlAttributes = new { @class = "input text-box single-line", @placeholder = "Setor" } })
+                        @Html.ValidationMessageFor(model => model.valor_prod, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Cadastrar" class="cadastrar" /><br />
+
+                        @ViewBag.message
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    </div>
+</body>
+</html>

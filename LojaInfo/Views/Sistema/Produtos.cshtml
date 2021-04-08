@@ -1,0 +1,75 @@
+﻿@model IEnumerable<LojaInfo.Models.Produto>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Produtos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+    <link href="~/Content/Produtos.css" rel="stylesheet" />
+</head>
+<body>
+ 
+    <h2>Produtos</h2>
+    <div class="center">
+        <div class="links">
+            @Html.ActionLink("<-", "DashboardGerente", new { htmlAttributes = new { @class = "link" } })
+            <input class="Adicionar" type="button" value="Adicionar Novo" onclick="location.href='@Url.Action("CadastrarProduto", "Sistema")'" />
+            <img class="logo" src="~/Imagens/Logo.png" />
+        </div>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.produto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.qt_estoque)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.valor_prod)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.desc_produto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.img)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.produto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.qt_estoque)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.valor_prod)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.desc_produto)
+                    </td>
+
+                    <td id="img">
+                        <img src="@Html.DisplayFor(modelItem => item.img)" />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "EditarProduto", new { id = item.produto })
+                    </td>
+                   
+                </tr>
+
+            }
+        </table>
+
+    </div>
+</body>
+</html>

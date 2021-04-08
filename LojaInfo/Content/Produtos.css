@@ -1,0 +1,111 @@
+﻿* {
+    font-family: 'Poppins', sans-serif serif;
+}
+
+:root {
+    --laranja: rgba(255, 121, 63, 0.95);
+    --azul: rgb(52,172,224);
+    --azul-Escuro: #2C5D92;
+}
+
+body {
+    background-color: var(--azul);
+
+    overflow: hidden;
+    width: 110%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+
+.logo{
+    width:12vw;
+    position:relative;
+    top:-5vw;
+    right:5vw;
+}
+
+footer {
+    position: relative;
+    top: 35vw;
+}
+
+body > div > div > a{
+    color:var(--azul-Escuro);
+    font-weight:bolder;
+    position:relative;
+    text-decoration:none;
+    
+}
+.center {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 75vw;
+    height: 38vw;
+    background: white;
+    border-radius: 10px;
+}
+h2 {
+    font-family: 'Poppins';
+    color: aliceblue;
+    position: relative;
+    left: 37%;
+    top: 5vw;
+    font-size:2vw;
+}
+.Adicionar {
+    background: linear-gradient(180deg, #0089EC 0%, rgba(255, 255, 255, 0) 100%), #34ACE0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    position: relative;
+    color: aliceblue;
+    width: 8vw;
+    left: 50vw;
+   
+    height: 2vw;
+    cursor: pointer;
+}
+.links {
+    display: flex;
+    font-family: 'Poppins';
+    text-decoration: none;
+    top: 7%;
+    left: 5%;
+    position: absolute;
+}
+body > div.center > div > a {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--azul-Escuro);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+table {
+    position: absolute;
+    top: 15%;
+    width: 80%;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    left: 2vw;
+}
+
+    table th {
+        font-family: poppins;
+        color: var(--azul-Escuro);
+        font-weight: 800;
+        text-decoration: none;
+    }
+
+    table td {
+        color: var(--azul-Escuro);
+        font-family: 'Poppins';
+        font-weight: 700;
+        font-size:1vw;
+        text-align:center;
+    }
+    #img img{
+       width:3vw;
+       height:3vw;
+    }

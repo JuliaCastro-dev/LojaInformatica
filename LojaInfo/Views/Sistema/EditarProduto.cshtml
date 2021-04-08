@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditarProduto</title>
+    <link href="~/Content/EditarProduto.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="center">
+        @using (Html.BeginForm("EditarProduto", "Sistema", FormMethod.Post))
+        {
+        <table>
+
+            <tr><td>Produto:</td><td><input type="text" name="produto" id="txtCod" value="@ViewBag.produto" /></td></tr>
+
+            <tr><td>Preço:</td><td><input type="text" name="valor" id="txtNome" value="@ViewBag.valor" /></td></tr>
+            <tr><td>Marca:</td><td><input type="text" name="marca" id="txtNome" value="@ViewBag.marca" /></td></tr>
+
+
+
+            <tr><td colspan="2"><input type="submit" value="Buscar" name="btn" id="btn" /></td></tr>
+
+            <tr><td colspan="2"><input type="submit" value="Atualizar" name="btn" id="btn" /></td></tr>
+            <tr><td colspan="2"><input type="submit" value="Excluir" name="btn" id="btn" /></td></tr>
+
+        </table>
+        }
+    </div>
+</body>
+</html>

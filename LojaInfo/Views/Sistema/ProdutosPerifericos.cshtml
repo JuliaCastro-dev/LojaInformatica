@@ -1,0 +1,40 @@
+﻿@model IEnumerable<LojaInfo.Models.Produto>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Periféricos</title>
+
+    <link href="~/Content/ProdutosGamer.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="navbar">
+        <h1 id="nome">SoftTech</h1>
+    </div>
+    <h1 id="setor">Setor Periféricos</h1>
+    <div class="center">
+        @foreach (var item in Model)
+        {
+            <div data-tilt class="produto">
+                <div class="Imagem">
+                    <img src="@Html.DisplayFor(modelItem => item.img)" alt="" />
+                </div>
+                <div class="Descricao">
+                    <h2>@Html.DisplayFor(modelItem => item.produto)</h2> <br />
+                    <h3>@Html.DisplayFor(modelItem => item.marca_produto)</h3>
+                    <h3>@Html.DisplayFor(modelItem => item.valor_prod)</h3>
+                </div>
+            </div>
+        }
+    </div>
+    @Scripts.Render("~/Scripts/tilt.js");
+</body>
+</html>

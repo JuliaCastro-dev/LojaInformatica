@@ -1,0 +1,225 @@
+﻿* {
+    font-family: 'Poppins', sans-serif serif;
+}
+:root {
+    --laranja: rgba(255, 121, 63, 0.95);
+    --azul: rgb(52,172,224);
+    --azul-Escuro: #2C5D92;
+     font-size:70%;
+}
+
+body {
+    background-color: var(--azul);
+    overflow: hidden;
+    width: 110%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.logo {
+    max-width: 25vw;
+    position: relative;
+    right: 13vw;
+    width: 10vw;
+    top:-2vw;
+    z-index: 1;
+}
+
+
+#nome {
+    position: relative;
+    left: 10%;
+    font-size: 2vw;
+    top: 1vw;
+    max-inline-size: 1vw;
+    color: aliceblue;
+}
+
+footer {
+    position: relative;
+    top: 35vw;
+}
+
+
+.center {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 50vw;
+    height: 38vw;
+    background: white;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "vendas vendas . produtos produtos"
+        "vendas vendas . funcionarios funcionarios"
+        "vendas vendas . clientes clientes";
+}
+
+#bemvindo{
+    color:aliceblue;
+    font-size:2vw;
+    position:relative;
+    top:4.5vw;
+    left:40%;
+
+}
+
+.vendas {
+   
+   
+    grid-area: vendas;
+    background: #F0F0F0;
+    width: 70%;
+    height: 65%;
+    padding: 8px;
+    font-size:1.3vw;
+   
+    border-radius: 10px;
+    margin: 5vw;
+}
+.img-money{
+    width:5vw;
+}
+.vendas span, .vendas img {
+    position: relative;
+    left: 27%;
+}
+.button-saiba {
+    background: linear-gradient(180deg, #0089EC 0%, rgba(255, 255, 255, 0) 100%), #34ACE0;
+    border-radius: 5px;
+    border:none;
+    outline:none;
+    position:relative;
+    top:50%;
+    color:aliceblue;
+    width:8vw;
+   right:2.5vw;
+    height:2vw;
+    cursor:pointer;
+}
+
+
+.produtos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: produtos;
+    background: #F0F0F0;
+    width: 80%;
+    height: 50%;
+    padding-top: 15px;
+    margin-right: 3vw;
+    margin-top: 2vw;
+    border-radius: 20px;
+    font-size: 1.3vw;
+}
+    .link, span{
+        font-family:poppins;
+        color:var(--azul-Escuro);
+        font-weight:800;
+        cursor:pointer;
+        text-decoration:none;
+    }
+
+.funcionarios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: funcionarios;
+    background: #F0F0F0;
+    width: 80%;
+    height: 50%;
+    padding-top: 15px;
+    margin-right: 3vw;
+    margin-top: 2vw;
+    border-radius: 20px;
+    font-size: 1.3vw;
+}
+
+.clientes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: clientes;
+    background: #F0F0F0;
+    width: 80%;
+    height: 50%;
+    padding-top: 15px;
+    margin-right: 3vw;
+    margin-top: 2vw;
+    border-radius: 20px;
+    font-size: 1.3vw;
+}
+.parte1 {
+    background: #F0F0F0;
+    width: 250px;
+    height: 250px;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+    .parte1 .buttonAzul {
+        height: 35px;
+        width: 100%;
+        background: #34ACE0;
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.5s;
+        border: none;
+    }
+
+        .parte1 .buttonAzul:hover {
+            background: #2C5D92;
+            transition: all 0.5s;
+        }
+
+.parte2 .cinza {
+    background: #F0F0F0;
+    width: 150px;
+    height: 150px;
+    padding-top: 15px;
+    margin-top: 25px;
+}
+
+.cinza a {
+    text-decoration: none;
+}
+
+.cinza:hover {
+    color: #34ACE0;
+}
+
+@media(max-width: 350px) {
+    .parte1 {
+        background: #F0F0F0;
+        width: 90%;
+        height: 200px;
+        padding: 8px;
+        border-radius: 10px;
+    }
+}
+
+@media(min-width: 750px) {
+    .dashboard-conteudo {
+        display: flex;
+        padding: 0 50px;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .parte1 .buttonAzul {
+        height: 35px;
+        width: 100%;
+        background: #34ACE0;
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.5s;
+        border: none;
+    }
+}

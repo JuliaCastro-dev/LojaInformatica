@@ -1,0 +1,55 @@
+﻿@model LojaInfo.Models.Cliente
+@{
+    ViewBag.Title = "buscaCliente";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title SoftTech</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="navbar">
+        <h1 id="nome">SoftTech</h1>
+    </div>
+    <div class="container body-content">
+        @using (Html.BeginForm("buscaCliente", "Cliente", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <label>Clientes</label>
+            <br />
+            <div class="editor-label">
+                Digite o Nome do Cliente
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.nm_cliente)
+            </div>
+            <br />
+            <input type="submit" value="Buscar" />
+        }
+
+        @Html.Raw(ViewBag.GridViewString)
+        <br />
+
+        <footer>
+            <hr />
+            <p>&copy; @DateTime.Now.Year - SoftTech</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>
+</html>
+
+
