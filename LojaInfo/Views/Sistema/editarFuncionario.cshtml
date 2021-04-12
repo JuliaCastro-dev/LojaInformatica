@@ -1,0 +1,54 @@
+﻿@model LojaInfo.Models.Funcionario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>editarCliente</title>
+    <link href="~/Content/editarCliente.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="center">
+        @Html.ActionLink("<-", "Funcionarios", new { htmlAttributes = new { @class = "link" } })
+        <img class="logo" src="~/Imagens/Logo.png" />
+        <h1 class="text-center mb-2">Atualize os dados do Funcionario</h1>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.cd_func)
+            <div class="txt_field">
+
+                @Html.EditorFor(model => model.nm_func, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nm_func, "", new { @class = "text-danger" })
+            </div>
+            <div class="txt_field">
+                @Html.EditorFor(model => model.end_func, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.end_func, "", new { @class = "text-danger" })
+            </div>
+            <div class="txt_field">
+
+                @Html.EditorFor(model => model.cargo_func, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cargo_func, "", new { @class = "text-danger" })
+            </div>
+            <div class="txt_field">
+               
+                @Html.EditorFor(m => m.tel_func, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <button type="submit" class="Salvar">Salvar</button>
+          
+
+        }
+    </div>
+</body>
+</html>
+
+
+

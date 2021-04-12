@@ -16,24 +16,15 @@ body {
     margin: 0;
 }
 
-.navbar {
-    background-color: var(--laranja);
-    position: absolute;
-    width: 115%;
-    display: flex;
-    top: -0.5%;
-    height: 15vw;
-    font-family: 'Poppins', sans-serif serif;
+.logo{
+    width:10vw;
+    position:relative;
+    z-index:5;
+    top:4vw;
+    left:3.5vw;
+   
 }
 
-#nome {
-    position: relative;
-    left: 10%;
-    font-size: 2vw;
-    top: 1vw;
-    max-inline-size: 1vw;
-    color: aliceblue;
-}
 
 footer {
     position: relative;
@@ -43,13 +34,28 @@ footer {
 
 .center {
     position: absolute;
-    top: 20%;
+    top: 12%;
     left: 25%;
     width: 50vw;
-    height: 39vw;
+    height: 43vw;
     background: white;
     border-radius: 10px;
 }
+.form-container{
+    position:absolute;
+    top:-5.5vw;
+    z-index:1;
+}
+.produtos {
+    color: var(--azul-Escuro);
+    overflow-y: visible;
+    position: relative;
+    font-family: 'Poppins', sans-serif serif;
+    left: 5%;
+}
+    .produtos table td, .produtos table th {
+        font-family: 'Poppins', sans-serif serif;
+    }
 
 form .txt_field {
     position: relative;
@@ -83,22 +89,23 @@ h4 {
     font-family: 'Poppins', sans-serif;
     left: 36%;
 }
-select{
+select {
     font-family: 'Poppins', sans-serif serif;
-    background-color:white;
-    width:12vw;
-    height:2vw;
-    color:crimson;
-    border:1px solid crimson;
-    border-radius:5px;
-    margin-left:1vw;
-   
+    background-color: white;
+    width: 12vw;
+    height: 2vw;
+    color: crimson;
+    border: 1px solid crimson;
+    border-radius: 5px;
+    margin-left: 1vw;
+    outline: none;
 }
 .selects{
     position:relative;
     display:flex;
     left:7vw;
     margin-bottom:4vw;
+   
 
 }
 
@@ -117,12 +124,26 @@ select{
     font-family: 'Poppins', sans-serif;
 }
 
-body > div.center > form > div > a {
-    position:relative;
+
+body > div > div > form > a {
+    position: relative;
     cursor: pointer;
     color: var(--azul-Escuro);
     font-family: 'Poppins', sans-serif;
-    font-weight: 700;
+    font-weight: 800;
     left: 5%;
-    top:1vw;
+    font-size: 1vw;
+    top: -2.3vw;
+    z-index: 2;
+}
+
+span {
+    color: var(--azul-Escuro);
+    position: relative;
+    left: 40%;
+    top: 8.6vw;
+    font-size: 1vw;
+    font-family: 'Poppins';
+    font-weight: 800;
+    z-index: 5;
 }

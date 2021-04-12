@@ -1,0 +1,182 @@
+﻿
+* {
+    font-family: 'Poppins', sans-serif serif;
+}
+
+:root {
+    --laranja: rgba(255, 121, 63, 0.95);
+    --azul: rgb(52,172,224);
+    --azul-Escuro: #2C5D92;
+}
+
+body {
+    background-color: var(--azul);
+    overflow: hidden;
+    width: 110%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.logo {
+    max-width: 10vw;
+    width: 10vw;
+    position: relative;
+    left: 5vw;
+    top: -2vw;
+    ;
+}
+
+#nome {
+    position: relative;
+    left: 10%;
+    font-size: 2vw;
+    top: 1vw;
+    max-inline-size: 1vw;
+    color: aliceblue;
+}
+
+footer {
+    position: relative;
+    top: 35vw;
+}
+
+h2 {
+    font-family: 'Poppins';
+    color: aliceblue;
+    position: relative;
+    left: 40%;
+    top: 6vw;
+    font-size: 1.8vw;
+}
+
+body {
+    background-color: var(--azul);
+}
+
+footer {
+    position: relative;
+    top: 50vw;
+}
+
+body > a {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--azul-Escuro);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    position: absolute;
+    left: 35vw;
+    z-index: 5;
+    top: 13vw;
+}
+
+h1 {
+    color: var(--azul-Escuro);
+    font-family: 'Poppins', sans-serif;
+}
+
+.center {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35vw;
+    height: 37vw;
+    background: white;
+    border-radius: 10px;
+}
+
+    .center h1 {
+        font-size: 1.1vw;
+        font-family: poppins;
+        text-align: center;
+        padding: 0 0 20px 0;
+        position: relative;
+        top: -3.5vw;
+    }
+
+    .center form {
+        padding: 0 130px;
+        box-sizing: border-box;
+    }
+
+body > div > a{
+    cursor:pointer;
+    font-size:1.2vw;
+    color:var(--azul-Escuro);
+    font-weight:800;
+    position:relative;
+    top:-7.3vw;
+    left:1.4vw;
+
+}
+
+form {
+    position: relative;
+    top: -3.5vw;
+}
+
+    form .txt_field {
+        position: relative;
+        border-bottom: 2px solid #adadad;
+        margin: 2vw 0;
+    }
+
+.txt_field input {
+    width: 100vw;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    max-width: 23vw;
+    color:var(--azul-Escuro);
+}
+
+.txt_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.txt_field span::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: .5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    top: -5px;
+    color: #2691d9;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    width: 100%;
+}
+.Salvar {
+    width: 40%;
+    height: 2vw;
+    border: none;
+    background: #34ACE0;
+    outline: none;
+    color: #e9f4fb;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    position: relative;
+    left: 6vw;
+}
+
+ 

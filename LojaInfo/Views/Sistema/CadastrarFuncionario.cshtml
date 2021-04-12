@@ -17,11 +17,10 @@
 
 </head>
 <body>
-    <div class="navbar">
-        <h1 id="nome">SoftTech</h1>
-    </div>
+  
     <span>@ViewBag.confCadastro</span>
     <div class="center">
+        <img class="logo"  src="~/Imagens/Logo.png" />
         @using (Html.BeginForm("CadastrarFuncionario", "Sistema", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.ValidationSummary(true, "Campos Obrigatórios", new { @class = "text-danger" })

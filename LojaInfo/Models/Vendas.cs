@@ -21,7 +21,7 @@ namespace LojaInfo.Models
         [DisplayName("Código Do Cliente ")]
         public string cd_cliente { get; set; }
         [DisplayName("Data Da venda ")]
-        public DateTime dt_venda { get; set; }
+        public string dt_venda { get; set; }
         [DisplayName("Tipo de Pagamento ")]
         public string tp_pagamento{ get; set; }
         [DisplayName("Endereço")]

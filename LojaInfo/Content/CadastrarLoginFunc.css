@@ -30,15 +30,12 @@ span {
     top: 5vw;
     left: 25%;
 }
-.navbar {
-    background-color: var(--laranja);
-    position: absolute;
-    width: 115%;
-    display: flex;
-    top: -0.5%;
-    height: 10vw;
-    font-family: 'Poppins', sans-serif serif;
+.logo{
+    position:relative;
+    width:10vw;
+    left:20vw;
 }
+
 body > div.center > a{
     color:var(--azul-Escuro);
     text-decoration:none;
@@ -55,7 +52,7 @@ body > div.center > a{
     left: 45%;
     transform: translate(-50%, -50%);
     width: 35vw;
-    height: 29vw;
+    height: 31vw;
     background: white;
     border-radius: 10px;
 }
@@ -69,13 +66,17 @@ body > div.center > a{
     text-align: center;
     padding: 0 0 20px 0;
     border-bottom: 1px solid silver;
+    color:var(--azul-Escuro);
 }
 
     .center form {
         padding: 0 40px;
         box-sizing: border-box;
     }
-
+    .form-horizontal{
+        position:absolute;
+        bottom:2vw;
+    }
 form .txt_field {
     position: relative;
     border-bottom: 2px solid #adadad;
@@ -135,8 +136,8 @@ form .txt_field {
 }
 
 .botao {
-    width: 40%;
-    height: 3vw;
+    width: 35%;
+    height: 2.5vw;
     border: none;
     background: #34ACE0;
     outline: none;
@@ -144,7 +145,8 @@ form .txt_field {
     cursor: pointer;
     outline: none;
     position: relative;
-    left: 7vw;
+    border-radius:10px;
+    left: 7.5vw;
 }
 
 .txt_field_cep {

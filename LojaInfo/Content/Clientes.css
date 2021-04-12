@@ -15,24 +15,11 @@ body {
     overflow-x: hidden;
     margin: 0;
 }
-
-.navbar {
-    background-color: var(--laranja);
-    position: absolute;
-    width: 115%;
-    display: flex;
-    top: -0.5%;
-    height: 15vw;
-    font-family: 'Poppins', sans-serif serif;
-}
-
-#nome {
-    position: relative;
-    left: 10%;
-    font-size: 2vw;
-    top: 1vw;
-    max-inline-size: 1vw;
-    color: aliceblue;
+.logo{
+    width:10vw;
+    position:relative;
+    left:5vw;
+    top:-2.5vw;
 }
 
 footer {
@@ -86,7 +73,7 @@ body > div.center > table > tbody > a {
 }
 table {
     position: absolute;
-    top: 10%;
+    top: 12%;
     width: 80%;
     margin-left: 2vw;
     margin-right: 2vw;
@@ -104,6 +91,7 @@ table {
         color: var(--azul-Escuro);
         font-family: 'Poppins';
         font-weight: 700;
+        text-align:center;
     }
 
 .Adicionar {
@@ -114,8 +102,8 @@ table {
     position: relative;
     color: aliceblue;
     width: 8vw;
-    left: 6vw;
+    left: 42vw;
     height: 2vw;
-    top:1vw;
+    top:-7.5vw;
     cursor: pointer;
 }

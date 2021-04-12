@@ -15,24 +15,11 @@ body {
     overflow-x: hidden;
     margin: 0;
 }
-
-.navbar {
-    background-color: var(--laranja);
-    position: absolute;
-    width: 115%;
-    display: flex;
-    top: -0.5%;
-    height: 15vw;
-    font-family: 'Poppins', sans-serif serif;
-}
-
-#nome {
-    position: relative;
-    left: 10%;
-    font-size: 2vw;
-    top: 1vw;
-    max-inline-size: 1vw;
-    color: aliceblue;
+.logo{
+    width:10vw;
+    position:relative;
+    left:5vw;
+    top:-2vw;
 }
 
 footer {
@@ -83,14 +70,14 @@ body > div.center > div > a {
    
     color: aliceblue;
     width: 8vw;
-    left:2vw;
+    left:42vw;
     height: 2vw;
     cursor: pointer;
 }
 table{
     position:absolute;
-    top:10%;
-    width:80%;
+    top:12.5%;
+    width:85%;
     margin-left:2vw;
     margin-right:2vw;
     left:2vw;
@@ -98,7 +85,18 @@ table{
     table th {
         font-family: poppins;
         color: var(--azul-Escuro);
-        font-weight: 800;
+        font-weight: bolder;
         text-decoration: none;
         border-right: 1px solid #00ff21;
     }
+
+td {
+    font-family: poppins;
+    color: var(--azul-Escuro);
+    font-weight: 700;
+    text-decoration: none;
+    border-right: 1px solid #00ff21;
+    font-size:1vw;
+    text-align:center;
+
+}

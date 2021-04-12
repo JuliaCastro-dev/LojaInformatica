@@ -49,6 +49,9 @@ footer {
     height: 38vw;
     background: white;
     border-radius: 10px;
+    display:flex;
+    justify-content:center;
+  
 }
 
 h2 {
@@ -88,11 +91,13 @@ img{
 }
 .produto {
     font-family: 'Poppins', sans-serif serif;
-    max-width: 17vw;
+    max-width: 22vw;
     display: block;
     border: 1px solid rgb(52,172,224);
     border-radius: 10px;
     margin: 5vw;
+    width:18vw;
+    height:18vw;
     transform-style: preserve-3d;
     transform: perspective(1000px);
     transform: translateZ(20px);

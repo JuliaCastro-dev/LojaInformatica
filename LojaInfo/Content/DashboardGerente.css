@@ -193,7 +193,13 @@ footer {
 .cinza:hover {
     color: #34ACE0;
 }
-
+#logout {
+    position: relative;
+    top: -11vw;
+    right: 17vw;
+    font-weight:800;
+    font-size:1vw;
+}
 @media(max-width: 350px) {
     .parte1 {
         background: #F0F0F0;

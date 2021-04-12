@@ -17,13 +17,12 @@ namespace LojaInfo.Acoes
         {
             conexao con = new conexao();
             
-            MySqlCommand cmd = new MySqlCommand(" insert into tbl_cliente(nm_cliente, cpf_cliente, tel_cliente, end_cliente, email_cliente) values(@nomeCli , @telCli, @cpfCli, @endCli, @emailCli )", con.MyConectarBD());
+            MySqlCommand cmd = new MySqlCommand(" insert into tbl_cliente(nm_cliente, cpf_cliente, end_cliente, email_cliente) values(@nomeCli , @cpfCli, @endCli, @emailCli )", con.MyConectarBD());
          
             cmd.Parameters.Add("@nomeCli", MySqlDbType.VarChar).Value = cli.nm_cliente;
 
             cmd.Parameters.Add("@cpfCli", MySqlDbType.VarChar).Value = cli.CPF_cliente;
 
-            cmd.Parameters.Add("@telCli", MySqlDbType.VarChar).Value = cli.tel_cliente;
             cmd.Parameters.Add("@endCli", MySqlDbType.VarChar).Value = cli.end_cliente;
             cmd.Parameters.Add("@emailCli", MySqlDbType.VarChar).Value = cli.email_cliente;
 
@@ -33,19 +32,19 @@ namespace LojaInfo.Acoes
 
             con.MyDesconectarBD();
         }
-        public void cadastrarLoginCliente(login user)
-        {
+        //public void cadastrarLoginCliente(login user)
+        //{
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_login(nome_usu, senha_usu,tipo) values(@usuario,@senha,3)", con.MyConectarBD());
+        //    MySqlCommand cmd = new MySqlCommand("insert into tbl_login(nome_usu, senha_usu,tipo) values(@usuario,@senha,3)", con.MyConectarBD());
 
-            cmd.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = user.usuario;
-            cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = user.senha;
+        //    cmd.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = user.usuario;
+        //    cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = user.senha;
 
 
-            cmd.ExecuteNonQuery();
+        //    cmd.ExecuteNonQuery();
 
-            con.MyDesconectarBD();
-        }
+        //    con.MyDesconectarBD();
+        //}
         public DataTable consultaCliente()
 
         {
@@ -73,37 +72,37 @@ namespace LojaInfo.Acoes
      
 
 
-        MySqlDataReader dr;
-        public void BuscaCliente(Cliente cli)
+        //MySqlDataReader dr;
+        //public void BuscaCliente(Cliente cli)
+        //{
+        //    MySqlCommand cmd = new MySqlCommand("select * from tbl_cliente where nm_cliente like %@nome%", con.MyConectarBD());
+        //    cmd.Parameters.AddWithValue("@nome", cli.nm_cliente);
+        //    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+        //    dr = cmd.ExecuteReader();
+
+        //    while (dr.Read())
+        //    {
+
+        //        cli.cd_cliente = dr[0].ToString();
+        //        cli.nm_cliente = dr[1].ToString();
+        //        cli.CPF_cliente = dr[2].ToString();
+        //        cli.tel_cliente = dr[3].ToString();
+        //        cli.end_cliente = dr[4].ToString();
+
+
+
+        //    }
+        //    con.MyDesconectarBD();
+        //}
+
+
+        public bool atualizarCliente(Cliente cli)
+
         {
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_cliente where nm_cliente like %@nome%", con.MyConectarBD());
-            cmd.Parameters.AddWithValue("@nome", cli.nm_cliente);
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-
-                cli.cd_cliente = dr[0].ToString();
-                cli.nm_cliente = dr[1].ToString();
-                cli.CPF_cliente = dr[2].ToString();
-                cli.tel_cliente = dr[3].ToString();
-                cli.end_cliente = dr[4].ToString();
 
 
 
-            }
-            con.MyDesconectarBD();
-        }
-
-
-        public void atualizarCliente(Cliente cli)
-
-        {
-
-
-
-            MySqlCommand cmd = new MySqlCommand("update tbl_cliente set nm_cliente=@nomeCli, tel_cliente=@telCli, cpf_cliente=@cpfCli, End_cliente=@endCli, email_cliente=@emailCli where cd_cliente=@codCli", con.MyConectarBD());
+            MySqlCommand cmd = new MySqlCommand("update tbl_cliente set nm_cliente=@nomeCli, cpf_cliente=@cpfCli, End_cliente=@endCli, email_cliente=@emailCli where cd_cliente=@codCli", con.MyConectarBD());
 
 
 
@@ -111,7 +110,6 @@ namespace LojaInfo.Acoes
 
             cmd.Parameters.Add("@nomeCli", MySqlDbType.VarChar).Value = cli.nm_cliente;
 
-            cmd.Parameters.Add("@telCli", MySqlDbType.VarChar).Value = cli.tel_cliente;
 
             cmd.Parameters.Add("@cpfCli", MySqlDbType.VarChar).Value = cli.CPF_cliente;
 
@@ -119,17 +117,18 @@ namespace LojaInfo.Acoes
 
             cmd.Parameters.Add("@emailCli", MySqlDbType.VarChar).Value = cli.email_cliente;
 
-
-
-            cmd.ExecuteNonQuery();
-
+            int i = cmd.ExecuteNonQuery();
             con.MyDesconectarBD();
+
+            if (i >= 1)
+                return true;
+            else
+                return false;
 
         }
 
 
-        public void excluirPaciente(Cliente cli)
-
+        public bool excluirCliente(int id)
         {
 
 
@@ -138,12 +137,43 @@ namespace LojaInfo.Acoes
 
 
 
-            cmd.Parameters.Add("@codCli", MySqlDbType.VarChar).Value = cli.cd_cliente;
+            cmd.Parameters.AddWithValue("@codCli", id);
 
-            cmd.ExecuteNonQuery();
-
+            int i = cmd.ExecuteNonQuery();
             con.MyDesconectarBD();
 
+            if (i >= 1)
+                return true;
+            else
+                return false;
+
+        }
+        public List<Cliente> listarCliente()
+        {
+            List<Cliente> ClienteList = new List<Cliente>();
+
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_cliente "
+                , con.MyConectarBD());
+
+            MySqlDataAdapter sd = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            sd.Fill(dt);
+            con.MyDesconectarBD();
+            foreach (DataRow dr in dt.Rows)
+            {
+                ClienteList.Add(
+                    new Cliente
+                    {
+                        cd_cliente = Convert.ToString(dr["cd_cliente"]),
+                        nm_cliente = Convert.ToString(dr["nm_cliente"]),
+                       
+                        CPF_cliente = Convert.ToString(dr["CPF_cliente"]),
+                        end_cliente = Convert.ToString(dr["end_cliente"]),
+                        email_cliente = Convert.ToString(dr["email_cliente"])
+                    });
+            }
+            return ClienteList;
         }
     }
 }

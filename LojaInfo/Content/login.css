@@ -13,6 +13,19 @@ footer {
     position: relative;
     top: 35vw;
 }
+body > div > div > a {
+    font-size: 1vw;
+    font-family: poppins;
+    position:relative;
+    top:-5vw;
+    color:var(--azul);
+    left:1vw;
+    font-weight:800;
+
+
+
+
+}
 
 .center {
     position: absolute;
@@ -62,6 +75,7 @@ form .txt_field {
     border: none;
     background: none;
     outline: none;
+    
 }
 
 .txt_field label {

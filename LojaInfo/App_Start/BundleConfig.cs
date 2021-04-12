@@ -26,7 +26,9 @@ namespace LojaInfo
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css"));
 
-           
+
+            bundles.Add(new ScriptBundle("~/bundles/inputmask").Include(
+                        "~/Scripts/inputmask/jquery.inputmask.js"));
         }
     }
 }

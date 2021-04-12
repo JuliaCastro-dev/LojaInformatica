@@ -15,11 +15,10 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <h1 id="nome">SoftTech</h1>
-    </div>
     <span> @ViewBag.confCadastro</span>
+  
     <div class="center">
+        
         @Html.ActionLink("<-", "Funcionarios", new { htmlAttributes = new { @class = "link" } }) <h1>Cadastre o Login!</h1>
 
         @using (Html.BeginForm("cadastroLoginFunc", "Sistema", FormMethod.Post, new { enctype = "multipart/form-data" }))

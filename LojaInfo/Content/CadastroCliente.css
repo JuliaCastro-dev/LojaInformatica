@@ -16,15 +16,12 @@ body {
     overflow-x: hidden;
     margin: 0;
 }
-
-.navbar {
-    background-color: var(--laranja);
-    position: absolute;
-    width: 115%;
-    display: flex;
-    top: -0.5%;
-    height: 15vw;
-    font-family: 'Poppins', sans-serif serif;
+.logo{
+    max-width:10vw;
+    width:10vw;
+    position:relative;
+    left:5vw;
+    top:-2vw;;
 }
 
 #nome {
@@ -46,7 +43,8 @@ h2 {
     color: aliceblue;
     position: relative;
     left: 40%;
-    top: 5vw;
+    top: 6vw;
+    font-size:1.8vw;
 }
 body {
     background-color: var(--azul);
@@ -65,7 +63,7 @@ body > a {
     position: absolute;
     left: 35vw;
     z-index:5;
-    top: 12vw;
+    top: 13vw;
 }
 .center {
     position: absolute;
@@ -79,18 +77,23 @@ body > a {
 }
 
     .center h1 {
-        font-size: 1.5vw;
+        font-size: 1.1vw;
         font-family: poppins;
         text-align: center;
         padding: 0 0 20px 0;
-        border-bottom: 1px solid silver;
+        position:relative;
+        top:-3.5vw;
+       
     }
 
     .center form {
-        padding: 0 40px;
+        padding: 0 120px;
         box-sizing: border-box;
     }
-
+    form{
+        position:relative;
+        top:-3.5vw;
+    }
 form .txt_field {
     position: relative;
     border-bottom: 2px solid #adadad;
@@ -105,7 +108,7 @@ form .txt_field {
     border: none;
     background: none;
     outline: none;
-    max-width: 33vw;
+    max-width: 23vw;
 }
 
 .txt_field label {
@@ -152,15 +155,16 @@ form .txt_field {
 
 .botao {
     width: 40%;
-    height: 3vw;
+    height: 2.5vw;
     border: none;
     background: #34ACE0;
     outline: none;
     color: #e9f4fb;
     cursor: pointer;
     outline: none;
+    border-radius:5px;
     position: relative;
-    left: 7vw;
+    left: 6vw;
 }
 
 .txt_field_cep {
@@ -222,6 +226,13 @@ form .txt_field_cep {
     outline: none;
     margin-left: 4vw;
     border-bottom: 2px solid #adadad;
+}
+p {
+    color: var(--azul-Escuro);
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    bottom:5px;
 }
 
 @media only screen and (max-width:1024px) {

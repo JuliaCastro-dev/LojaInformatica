@@ -7,11 +7,10 @@
 }
 body {
     display: block;
-   background-color: #D5D6D7;
-
+    background-color: #D5D6D7;
     overflow-x: hidden;
 }
-header{
+header {
     position: absolute;
     width: 100%;
     height: 62px;
@@ -21,7 +20,9 @@ header{
     align-items: center;
     background: transparent;
     z-index: 100;
+    overflow-x: hidden;
 }
+
 h1 {
     position: absolute;
     width: 1191px;
@@ -67,6 +68,42 @@ h2 {
     text-align: center;
     color: #FF7134;
     width: 3vw;
+    border-radius: 10px;
+}
+.setorGamer {
+    background-color: transparent;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 20px;
+    line-height: 30px;
+    border: none;
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    left: 20%;
+    text-align: center;
+    color: rgb(52,172,224);
+    width: 7vw;
+    overflow-x: hidden;
+    border-radius: 10px;
+}
+.setorp {
+    background-color: transparent;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 20px;
+    line-height: 30px;
+    border: none;
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    left: 25%;
+    text-align: center;
+    color: rgb(52,172,224);
+    width: 8vw;
+    overflow-x: hidden;
     border-radius: 10px;
 }
 .logo  {

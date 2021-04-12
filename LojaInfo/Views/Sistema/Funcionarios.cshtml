@@ -14,15 +14,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar">
-        <h1 id="nome">SoftTech</h1>
-    </div>
     <h1 id="funcionarios">Funcionários</h1>
     <div class="center">
+        <img class="logo" src="~/Imagens/Logo.png" />
+
         <div class="links">
             @Html.ActionLink("<-", "DashboardGerente", new { htmlAttributes = new { @class = "link" } })
             <input class="Adicionar" type="button" value="Adicionar Novo" onclick="location.href='@Url.Action("CadastrarFuncionario", "Sistema")'" />
-        </div> 
+        </div>
         <table class="table">
             <tr>
                 <th>
@@ -39,29 +38,37 @@
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.tel_func)
-                </th>    
+                </th>
             </tr>
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.cd_func)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.nm_func)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.end_func)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.cargo_func)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.tel_func)
-                    </td>
-                    
-                </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cd_func)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nm_func)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.end_func)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cargo_func)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tel_func)
+            </td>
+            @if(Session["tipologado1"] != null)
+            {
+                <td class="edit">
+                    @Html.ActionLink("Atualizar", "editarFuncionario", new { id = item.cd_func })
+                    @Html.ActionLink("Excluir", "excluirFuncionario",  new { id = item.cd_func }, new { onclick = "return confirm('Deseja realmente excluir esse Funcionário?');" })
+                </td>
+            }
+
+
+        </tr>
             }
 
 

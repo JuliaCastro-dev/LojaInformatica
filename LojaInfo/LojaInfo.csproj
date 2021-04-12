@@ -153,6 +153,7 @@
     <Content Include="Content\CadFuncionario.css" />
     <Content Include="Content\Clientes.css" />
     <Content Include="Content\DashboardGerente.css" />
+    <Content Include="Content\editarCliente.css" />
     <Content Include="Content\EditarProduto.css" />
     <Content Include="Content\ExcFunc.css" />
     <Content Include="Content\Funcionarios.css" />
@@ -180,6 +181,11 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\inputmask\bindings\inputmask.binding.js" />
+    <Content Include="Scripts\inputmask\inputmask.js" />
+    <Content Include="Scripts\inputmask\inputmask.min.js" />
+    <Content Include="Scripts\inputmask\jquery.inputmask.js" />
+    <Content Include="Scripts\inputmask\jquery.inputmask.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -217,7 +223,10 @@
     <Content Include="Views\Sistema\CadastrarVenda.cshtml" />
     <Content Include="Views\Sistema\ProdutosGamer.cshtml" />
     <Content Include="Views\Sistema\ProdutosPerifericos.cshtml" />
-    <Content Include="Views\Sistema\EditarProduto.cshtml" />
+    <Content Include="Views\Sistema\editarCliente.cshtml" />
+    <Content Include="Views\Sistema\editarFuncionario.cshtml" />
+    <Content Include="Views\Sistema\Logout.cshtml" />
+    <Content Include="Views\Sistema\editarProduto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

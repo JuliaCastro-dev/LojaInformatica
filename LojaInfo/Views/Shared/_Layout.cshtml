@@ -16,7 +16,7 @@
 <body>
     <div class="navbar">
         <h1 id="nome">SoftTech</h1>
-      
+
         <div class="pesquisa">
 
             <table class="links-setores">
@@ -28,16 +28,16 @@
 
         </div>
         <div class="links">
-            <span class="login">@Html.ActionLink("Login", "Login","Site", new { htmlAttributes = new { @class = "link" } })<i id="icon-login" class="glyphicon glyphicon-user"></i></span>
+            <span class="login">@Html.ActionLink("Login", "Login", "Site", new { htmlAttributes = new { @class = "link" } })<i id="icon-login" class="glyphicon glyphicon-user"></i></span>
         </div>
-        <br/>
-       
+        <br />
+
 
     </div>
     <div class="container body-content">
         @RenderBody()
-        <br/>
-        
+        <br />
+
         <footer>
             <hr />
             <p>&copy; @DateTime.Now.Year - SoftTech</p>
@@ -46,6 +46,8 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/inputmask")
+    @RenderSection("scripts", required: false)
 
 </body>
 </html>

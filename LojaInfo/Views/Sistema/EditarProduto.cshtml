@@ -1,5 +1,5 @@
-﻿
-@{
+﻿@model LojaInfo.Models.Produto 
+@{ 
     Layout = null;
 }
 
@@ -8,29 +8,57 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>EditarProduto</title>
-    <link href="~/Content/EditarProduto.css" rel="stylesheet" />
+    <title>Atualizar Cliente</title>
+    <link href="~/Content/editarCliente.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="center">
-        @using (Html.BeginForm("EditarProduto", "Sistema", FormMethod.Post))
+        @Html.ActionLink("<-", "Produtos", new { htmlAttributes = new { @class = "link" } })
+        <img class="logo" src="~/Imagens/Logo.png" />
+        <h1 class="text-center mb-2">Atualize os dados do Produto</h1>
+        @using (Html.BeginForm())
         {
-        <table>
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.produto)
 
-            <tr><td>Produto:</td><td><input type="text" name="produto" id="txtCod" value="@ViewBag.produto" /></td></tr>
+            <div class="txt_field">
 
-            <tr><td>Preço:</td><td><input type="text" name="valor" id="txtNome" value="@ViewBag.valor" /></td></tr>
-            <tr><td>Marca:</td><td><input type="text" name="marca" id="txtNome" value="@ViewBag.marca" /></td></tr>
+                @Html.EditorFor(model => model.produto, new { htmlAttributes = new { @class = "input" } })
+                
+            </div>
+         
+            <div class="txt_field">
+
+                @Html.EditorFor(model => model.desc_produto, new { htmlAttributes = new { @class = "input" } })
+                @Html.ValidationMessageFor(model => model.desc_produto, "", new { @class = "text-danger" })
+            </div>
+
+
+            <div class="txt_field">
+
+                @Html.EditorFor(model => model.qt_estoque, new { htmlAttributes = new { @class = "input" } })
+                @Html.ValidationMessageFor(model => model.qt_estoque, "", new { @class = "text-danger" })
+            </div>
+
+           
+            
+            <div class="txt_field">
+
+                @Html.EditorFor(model => model.img, new { htmlAttributes = new { @class = "input" } })
+                @Html.ValidationMessageFor(model => model.img, "", new { @class = "text-danger" })
+            </div>
 
 
 
-            <tr><td colspan="2"><input type="submit" value="Buscar" name="btn" id="btn" /></td></tr>
 
-            <tr><td colspan="2"><input type="submit" value="Atualizar" name="btn" id="btn" /></td></tr>
-            <tr><td colspan="2"><input type="submit" value="Excluir" name="btn" id="btn" /></td></tr>
+            <button type="submit" class="Salvar">Salvar</button>
 
-        </table>
         }
     </div>
 </body>
 </html>
+
+
+

@@ -74,7 +74,7 @@ namespace LojaInfo.Acoes
         {
             List<Funcionario> Funclist = new List<Funcionario>();
 
-            MySqlCommand cmd = new MySqlCommand("select cd_func as cd_func, nm_func as nm_func, end_func as end_func, cargo_func as cargo_func, tel_func as tel_func from tbl_funcionario", con.MyConectarBD());
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_funcionario" , con.MyConectarBD());
             MySqlDataAdapter sd = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
 
@@ -91,7 +91,7 @@ namespace LojaInfo.Acoes
                         nm_func = Convert.ToString(dr["nm_func"]),
                         end_func = Convert.ToString(dr["end_func"]),
                         cargo_func = Convert.ToString(dr["cargo_func"]),
-                        tel_func = Convert.ToString(dr["tel_func"]),
+                        tel_func = Convert.ToString(dr["tel_func"])
                     });
 
 
@@ -115,14 +115,45 @@ namespace LojaInfo.Acoes
                 return false;
         }
 
+
+        public bool atualizarFuncionario(Funcionario func)
+
+        {
+
+            MySqlCommand cmd = new MySqlCommand("update tbl_funcionario set nm_func=@nomefunc, tel_func=@telfunc, cargo_func=@cargofunc, end_func=@endfunc where cd_func=@cdfunc", con.MyConectarBD());
+
+
+
+            cmd.Parameters.Add("@cdfunc", MySqlDbType.VarChar).Value = func.cd_func;
+
+            cmd.Parameters.Add("@nomefunc", MySqlDbType.VarChar).Value = func.nm_func;
+
+            cmd.Parameters.Add("@telfunc", MySqlDbType.VarChar).Value = func.tel_func;
+
+            cmd.Parameters.Add("@cargofunc", MySqlDbType.VarChar).Value = func.cargo_func;
+
+            cmd.Parameters.Add("@endfunc", MySqlDbType.VarChar).Value = func.end_func;
+
+
+            int i = cmd.ExecuteNonQuery();
+            con.MyDesconectarBD();
+
+            if (i >= 1)
+                return true;
+            else
+                return false;
+
+        }
+
+
         // ***************VENDA ACOES
         public void cadastrarVenda(Venda vend)
         {
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_venda(nm_cliente,dt_venda,tp_pagamento,end_cliente,vl_total, nm_produto, qt_produto) values(@nome,@dt, @tipo, @end, @vl, @produto,@qt)", con.MyConectarBD());
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_venda(cd_cliente,dt_venda,tp_pagamento,end_cliente,vl_total, nm_produto, qt_produto) values(@cd,@dt, @tipo, @end, @vl, @produto,@qt)", con.MyConectarBD());
 
-            cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = vend.nm_cliente;
-            cmd.Parameters.Add("@dt", MySqlDbType.VarChar).Value = vend.dt_venda;
+            cmd.Parameters.Add("@cd", MySqlDbType.VarChar).Value = vend.cd_cliente;
+            cmd.Parameters.Add("@dt", MySqlDbType.Date).Value = vend.dt_venda;
             cmd.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = vend.tp_pagamento;
             cmd.Parameters.Add("@end", MySqlDbType.VarChar).Value = vend.end_cliente;
             cmd.Parameters.Add("@vl", MySqlDbType.Decimal).Value = vend.vl_total;
@@ -153,7 +184,7 @@ namespace LojaInfo.Acoes
         {
             List<Vendas> Vendalist = new List<Vendas>();
 
-            MySqlCommand cmd = new MySqlCommand("select * from vw_MostraVendas;", con.MyConectarBD());
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_venda;", con.MyConectarBD());
             MySqlDataAdapter sd = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
 
@@ -171,8 +202,9 @@ namespace LojaInfo.Acoes
                         cd_venda = Convert.ToString(dr["cd_venda"]),
                         cd_cliente = Convert.ToString(dr["cd_cliente"]),
                         tp_pagamento = Convert.ToString(dr["tp_pagamento"]),
+                        end_cliente = Convert.ToString(dr["end_cliente"]),
                         vl_total = Convert.ToString(dr["vl_total"]),
-                        dt_venda = Convert.ToDateTime(dr["dt_venda"])
+                        dt_venda = Convert.ToString(dr["dt_venda"])
 
                     });
             }
@@ -227,20 +259,28 @@ namespace LojaInfo.Acoes
 
         }
 
-        public void excluirProduto(Produto prod)
+        public bool excluirProduto(string id)
         {
             MySqlCommand cmd = new MySqlCommand("delete from tbl_produto where produto = @cd", con.MyConectarBD());
 
-            cmd.Parameters.Add("@cd", MySqlDbType.VarChar).Value = prod.produto;
 
-            cmd.ExecuteNonQuery();
+            cmd.Parameters.AddWithValue("@cd", id);
+
+            int i = cmd.ExecuteNonQuery();
             con.MyDesconectarBD();
 
+            if (i >= 1)
+                return true;
+            else
+                return false;
         }
 
-        public void atualizaProduto(Produto prod)
+      
+        public bool atualizarProduto(Produto prod)
 
         {
+
+
 
             MySqlCommand cmd = new MySqlCommand("update tbl_produto set qt_estoque=@qt , vl_produto=@vl , desc_produto=@desc, setor_produto=@setor, marca_produto=@marca, img=@img where nm_produto=@prod", con.MyConectarBD());
 
@@ -256,12 +296,13 @@ namespace LojaInfo.Acoes
             cmd.Parameters.Add("@marca", MySqlDbType.VarChar).Value = prod.marca_produto;
             cmd.Parameters.Add("@img", MySqlDbType.VarChar).Value = prod.img;
 
-
-
-
-            cmd.ExecuteNonQuery();
-
+            int i = cmd.ExecuteNonQuery();
             con.MyDesconectarBD();
+
+            if (i >= 1)
+                return true;
+            else
+                return false;
 
         }
 
@@ -364,7 +405,17 @@ namespace LojaInfo.Acoes
             con.MyDesconectarBD();
             return clientes;
         }
-       
+
+        public DataTable consultaProdutos()
+        {
+            MySqlCommand cmd = new MySqlCommand("select nm_produto, vl_Produto  from tbl_produto", con.MyConectarBD());
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable produtos = new DataTable();
+            da.Fill(produtos);
+            con.MyDesconectarBD();
+            return produtos;
+        }
+
 
         public List<Cliente> BuscarClientes()
         {
@@ -385,7 +436,7 @@ namespace LojaInfo.Acoes
 
                         cd_cliente = Convert.ToString(dr["cd_cliente"]),
                         nm_cliente = Convert.ToString(dr["nm_cliente"]),
-                        tel_cliente = Convert.ToString(dr["tel_cliente"]),
+                      
                         end_cliente= Convert.ToString(dr["end_cliente"]),
                         CPF_cliente = Convert.ToString(dr["CPF_cliente"]),
                         email_cliente = Convert.ToString(dr["email_cliente"])

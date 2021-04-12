@@ -15,82 +15,94 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar">
-        <h1 id="nome">SoftTech</h1>
         <span>@ViewBag.confCadastro</span>
-    </div>
+  
     <div class="center">
+        <div class="form-container">
+            <img class="logo" src="~/Imagens/Logo.png" />
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
 
-        <div class="form-horizontal">
-            @Html.ActionLink("<-", "Vendas", new { htmlAttributes = new { @class = "link" } })
-            <h4>Nova Venda</h4>
-            @Html.ValidationSummary(true, "Obrigatório Todos os dados", new { @class = "text-danger" })
+                @Html.ActionLink("<-", "Vendas", new { htmlAttributes = new { @class = "link" } })
+                <h4>Nova Venda</h4>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-            <div class="form-group">
 
-                <div class="selects">
-                    @Html.DropDownList("cliente", "Escolha o cliente")
-                    @Html.ValidationMessageFor(model => model.nm_cliente, "", new { @class = "text-danger" })
-                    @Html.DropDownList("produto", "Escolha o Produto")
-                    @Html.ValidationMessageFor(model => model.nm_produto, "", new { @class = "text-danger" })
+                <div class="form-group">
+
+                    <div class="selects">
+                        @Html.DropDownList("cliente", "Escolha o cliente")
+                        <div class="produtos">
+                            @Html.Raw(ViewBag.GridViewString)
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="form-group">
 
-            <div class="form-group">
+                    <div class="txt_field">
+                        @Html.EditorFor(model => model.cd_cliente, new { htmlAttributes = new { @class = "form-control", @placeholder = "Cliente" } })
+                        @Html.ValidationMessageFor(model => model.cd_cliente, "", new { @class = "text-danger" })
+                    </div>
 
-                <div class="txt_field">
-                    @Html.EditorFor(model => model.qt_produto, new { htmlAttributes = new { @class = "form-control", @placeholder = "Quantidade" } })
-                    @Html.ValidationMessageFor(model => model.qt_produto, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+
+                    <div class="txt_field">
+                        @Html.EditorFor(model => model.nm_produto, new { htmlAttributes = new { @class = "form-control", @placeholder = "Produto" } })
+                        @Html.ValidationMessageFor(model => model.nm_produto, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+                <div class="form-group">
+
+                    <div class="txt_field">
+                        @Html.EditorFor(model => model.qt_produto, new { htmlAttributes = new { @class = "form-control", @placeholder = "Quantidade" } })
+                        @Html.ValidationMessageFor(model => model.qt_produto, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+                <div class="form-group">
+
+                    <div class="txt_field">
+
+                        @Html.EditorFor(model => model.vl_total, new { htmlAttributes = new { @class = "form-control", @placeholder = "Total (para calcular faça Quantidade X Valor do produto)" } })
+                        @Html.ValidationMessageFor(model => model.vl_total, "", new { @class = "text-danger" })
+                    </div>
                 </div>
 
-            </div>
-            <div class="form-group">
+                <div class="form-group">
 
-                <div class="txt_field">
-                    @Html.EditorFor(model => model.vl_total, new { htmlAttributes = new { @class = "form-control", @placeholder = "Total" } })
-                    @Html.ValidationMessageFor(model => model.vl_total, "", new { @class = "text-danger" })
+                    <div class="txt_field">
+                        @Html.EditorFor(model => model.dt_venda, new { htmlAttributes = new { @class = "form-control", @placeholder = "Data da Venda", @type = "date" } })
+                        @Html.ValidationMessageFor(model => model.dt_venda, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
+                <div class="form-group">
 
-                <div class="txt_field">
-                    @Html.EditorFor(model => model.dt_venda, new { htmlAttributes = new { @class = "form-control", @placeholder = "Data da Venda", @type = "date" } })
-                    @Html.ValidationMessageFor(model => model.dt_venda, "", new { @class = "text-danger" })
+                    <div class="txt_field">
+                        @Html.EditorFor(model => model.tp_pagamento, new { htmlAttributes = new { @class = "form-control", @placeholder = "Tipo de pagamento" } })
+                        @Html.ValidationMessageFor(model => model.tp_pagamento, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
+                <div class="form-group">
 
-                <div class="txt_field">
-                    @Html.EditorFor(model => model.tp_pagamento, new { htmlAttributes = new { @class = "form-control", @placeholder = "Tipo de pagamento" } })
-                    @Html.ValidationMessageFor(model => model.tp_pagamento, "", new { @class = "text-danger" })
+                    <div class="txt_field">
+                        @Html.EditorFor(model => model.end_cliente, new { htmlAttributes = new { @class = "form-control", @placeholder = "Endereço" } })
+                        @Html.ValidationMessageFor(model => model.end_cliente, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
-
-            <div class="form-group">
-
-                <div class="txt_field">
-                    @Html.EditorFor(model => model.end_cliente, new { htmlAttributes = new { @class = "form-control", @placeholder = "Endereço" } })
-                    @Html.ValidationMessageFor(model => model.end_cliente, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Cadastrar" class="cadastrar" /><br />
+                    </div>
                 </div>
-            </div>
 
-           
-
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Cadastrar" class="cadastrar" /><br />
-                </div>
-            </div>
+            }
         </div>
-        }
-
     </div>
 </body>
 </html>

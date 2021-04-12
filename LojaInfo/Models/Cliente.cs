@@ -20,11 +20,13 @@ namespace LojaInfo.Models
 
         [DisplayName("Telefone")]
         [Required(ErrorMessage = "O Telefone é Obrigatório!!")]
+        [StringLength(11)]
         public string  tel_cliente { get; set; }
 
 
         [DisplayName("CPF")]
         [Required(ErrorMessage = "O CPF é Obrigatório!!")]
+        [StringLength(11)]
         public string  CPF_cliente { get; set; }
 
 

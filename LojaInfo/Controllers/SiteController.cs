@@ -18,16 +18,8 @@ namespace LojaInfo.Controllers
         AcoesSistema acS = new AcoesSistema();
         public ActionResult Index()
         {
-            
-            return View();
-
-        }
-
-        public ActionResult DashboardCliente()
-        {
             return View();
         }
-
         public ActionResult Login()
         {
             return View();
@@ -49,21 +41,13 @@ namespace LojaInfo.Controllers
                     Session["tipoLogado1"] = verLogin.tipo.ToString(); //=1 GERENTE;
                     return RedirectToAction("DashboardGerente", "Sistema");
                 }
-                else if (verLogin.tipo == "2")
+                else 
                 {
                     Session["tipoLogado2"] = verLogin.tipo.ToString();//=2 FUNCIONARIO
                     return RedirectToAction("DashboardGerente", "Sistema");
                 }
-                else
-                {
-                    Session["tipoLogado3"] = verLogin.tipo.ToString();//=3 CLIENTE
-                    return RedirectToAction("DashboardCliente", "Cliente");
-                }
-                
-
                
             }
-
             else
             {
                 Response.Write("<script> alert('Erro no login')</script >");
@@ -72,8 +56,9 @@ namespace LojaInfo.Controllers
 
             }
 
-           
         }
+
+      
 
     }
 }

@@ -15,12 +15,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar">
-        <h1 id="nome">SoftTech</h1>
-    </div>
+  
    
     <h2>Vendas</h2>
     <div class="center">
+        <img class="logo" src="~/Imagens/Logo.png" />
         @Html.ActionLink("<-", "DashboardGerente", new { htmlAttributes = new { @class = "link" } })
         <input class="Adicionar" type="button" value="Adicionar Nova Venda" onclick="location.href='@Url.Action("CadastrarVenda", "Sistema")'" />
         <table class="table">
@@ -63,11 +62,10 @@
                         @Html.DisplayFor(modelItem => item.dt_venda)
                     </td>
 
-                    <td class="end">
+                    <td>
                         @Html.DisplayFor(modelItem => item.end_cliente)
                     </td>
-                    <td>
-                    </td>
+                    
                     <td>
                         @Html.DisplayFor(modelItem => item.vl_total)
                     </td>

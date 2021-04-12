@@ -13,6 +13,7 @@ namespace LojaInfo.Controllers
     {
         ClienteAcoes cliA = new ClienteAcoes();
         LoginAcoes Log = new LoginAcoes();
+        Cliente cad = new Cliente();
         public ActionResult Index()
         {
             return View();
@@ -47,7 +48,10 @@ namespace LojaInfo.Controllers
 
         }
 
+        
 
-       
+        
+
+
     }
 }
